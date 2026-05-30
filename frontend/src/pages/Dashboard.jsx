@@ -12,48 +12,48 @@ const difficultyColor = {
 };
 
 const PRESENTE = [
-  ['I',         'am',  "I'm",     'Ai-m',  'I am a student.',      'Ai âm ê stúdent.',       'Eu sou / Eu estou'],
-  ['You',       'are', "You're",  'Iur',   'You are smart.',        'Iú ar smart.',            'Você é / Você está'],
-  ['He',        'is',  "He's",    'Riz',   'He is tall.',           'Hi iz tól.',              'Ele é / Ele está'],
-  ['She',       'is',  "She's",   'Shiz',  'She is happy.',         'Shi iz hâpi.',            'Ela é / Ela está'],
-  ['It',        'is',  "It's",    'Its',   'It is cold.',           'It iz kóuld.',            'É / Está (coisas, lugares ou animais)'],
-  ['We',        'are', "We're",   'Uí-ar', 'We are friends.',       'Uí ar frends.',           'Nós somos / Nós estamos'],
-  ['You (pl.)', 'are', "You're",  'Iur',   'You are welcome.',      'Iú ar uélkam.',           'Vocês são / Vocês estão'],
-  ['They',      'are', "They're", 'Dér',   'They are teachers.',    'Déi ar títchers.',        'Eles(as) são / Eles(as) estão'],
+  ['I',         'am',  "I'm",     'Ai-m',  'I am a very dedicated student at the university.',         'Ai âm ê véri dédikêitid stúdent êt dê iunivérsiti.',      'Eu sou / Eu estou'],
+  ['You',       'are', "You're",  'Iur',   'You are one of the smartest people I have ever met.',      'Iú ar uán ov dê smartest pípl Ai hâv éver mét.',           'Você é / Você está'],
+  ['He',        'is',  "He's",    'Riz',   'He is a tall and very confident young man.',               'Hi iz ê tól ênd véri kónfident iâng mên.',                 'Ele é / Ele está'],
+  ['She',       'is',  "She's",   'Shiz',  'She is extremely happy with her brand new job.',           'Shi iz ikstrímli hâpi uid hér brând niú djób.',             'Ela é / Ela está'],
+  ['It',        'is',  "It's",    'Its',   'It is very cold and windy outside today.',                 'It iz véri kóuld ênd uíndi áutsáid tudêi.',                'É / Está (coisas, lugares ou animais)'],
+  ['We',        'are', "We're",   'Uí-ar', 'We are the best of friends since our early childhood.',   'Uí ar dê bést ov frends sins áuer érli tcháildhud.',        'Nós somos / Nós estamos'],
+  ['You (pl.)', 'are', "You're",  'Iur',   'You are all very welcome to join our amazing team.',      'Iú ar ól véri uélkam tu djóin áuer êméizing tím.',          'Vocês são / Vocês estão'],
+  ['They',      'are', "They're", 'Dér',   'They are experienced and truly dedicated teachers.',       'Déi ar ekspíriênsd ênd trúli dédikêitid títchers.',         'Eles(as) são / Eles(as) estão'],
 ];
 
 const PASSADO = [
-  ['I',         'was',  'Waz',  'I was tired yesterday.',    'Ai waz táierd iésterdêi.',     'Eu era / Eu estava'],
-  ['You',       'were', 'Wer',  'You were right.',            'Iú wer ráit.',                 'Você era / Você estava'],
-  ['He',        'was',  'Waz',  'He was at home.',            'Hi waz ât hôum.',              'Ele era / Ele estava'],
-  ['She',       'was',  'Waz',  'She was happy.',             'Shi waz hâpi.',                'Ela era / Ela estava'],
-  ['It',        'was',  'Waz',  'It was cold.',               'It waz kóuld.',                'Era / Estava (coisas, lugares ou animais)'],
-  ['We',        'were', 'Wer',  'We were students.',          'Uí wer stúdents.',             'Nós éramos / Nós estávamos'],
-  ['You (pl.)', 'were', 'Wer',  'You were late.',             'Iú wer léit.',                 'Vocês eram / Vocês estavam'],
-  ['They',      'were', 'Wer',  'They were busy.',            'Déi wer bízi.',                'Eles(as) eram / Eles(as) estavam'],
+  ['I',         'was',  'Waz',  'I was very tired after a long day at work yesterday.',           'Ai waz véri táierd âfter ê lóng dei êt wérk iésterdêi.',      'Eu era / Eu estava'],
+  ['You',       'were', 'Wer',  'You were absolutely right about everything you said.',           'Iú wer êbsolútli ráit êbaút évrithing iú sed.',                'Você era / Você estava'],
+  ['He',        'was',  'Waz',  'He was at home watching TV when I called him.',                  'Hi waz êt hôum uátching tivi uén Ai kóld him.',               'Ele era / Ele estava'],
+  ['She',       'was',  'Waz',  'She was so happy when she received the wonderful news.',         'Shi waz sô hâpi uén shi risívd dê uânderful niuz.',            'Ela era / Ela estava'],
+  ['It',        'was',  'Waz',  'It was extremely cold and snowy the entire week.',               'It waz ikstrímli kóuld ênd snôui dê entáier uík.',             'Era / Estava (coisas, lugares ou animais)'],
+  ['We',        'were', 'Wer',  'We were students at the same school for many years.',            'Uí wer stúdents êt dê sêim skúl for méni iíers.',             'Nós éramos / Nós estávamos'],
+  ['You (pl.)', 'were', 'Wer',  'You were all late for the most important meeting of the year.', 'Iú wer ól léit for dê môust impórtênt míting ov dê iíer.',    'Vocês eram / Vocês estavam'],
+  ['They',      'were', 'Wer',  'They were extremely busy preparing for the big presentation.',  'Déi wer ikstrímli bízi pripéring for dê big prezentéishon.',   'Eles(as) eram / Eles(as) estavam'],
 ];
 
 const FUTURO = [
-  ['I',         'will be', "I'll be",    'Ai-l bi',  'I will be there soon.',     'Ai uíl bi dér sun.',          'Eu vou ser / Eu vou estar'],
-  ['You',       'will be', "You'll be",  'Iúl bi',   'You will be fine.',          'Iú uíl bi fáin.',             'Você vai ser / Você vai estar'],
-  ['He',        'will be', "He'll be",   'Híl bi',   'He will be late.',           'Hi uíl bi léit.',             'Ele vai ser / Ele vai estar'],
-  ['She',       'will be', "She'll be",  'Shíl bi',  'She will be happy.',         'Shi uíl bi hâpi.',            'Ela vai ser / Ela vai estar'],
-  ['It',        'will be', "It'll be",   'Ítl bi',   'It will be cold tomorrow.',  'It uíl bi kóuld tumórou.',    'Vai ser / Vai estar'],
-  ['We',        'will be', "We'll be",   'Uíl bi',   'We will be ready.',          'Uí uíl bi rédi.',             'Nós vamos ser / Nós vamos estar'],
-  ['You (pl.)', 'will be', "You'll be",  'Iúl bi',   'You will be welcome.',       'Iú uíl bi uélkam.',           'Vocês vão ser / Vocês vão estar'],
-  ['They',      'will be', "They'll be", 'Déil bi',  'They will be here at 8.',    'Déi uíl bi hír êt éit.',      'Eles(as) vão ser / Eles(as) vão estar'],
+  ['I',         'will be', "I'll be",    'Ai-l bi',  'I will be there to support you as soon as possible.',          'Ai uíl bi dér tu supórt iú êz sun êz pósibl.',             'Eu vou ser / Eu vou estar'],
+  ['You',       'will be', "You'll be",  'Iúl bi',   'You will be perfectly fine after some rest and good sleep.',   'Iú uíl bi pérfektli fáin âfter sam rést ênd gud slíp.',     'Você vai ser / Você vai estar'],
+  ['He',        'will be', "He'll be",   'Híl bi',   'He will be late again because of the heavy traffic.',          'Hi uíl bi léit êguén bikóz ov dê hévi trâfik.',            'Ele vai ser / Ele vai estar'],
+  ['She',       'will be', "She'll be",  'Shíl bi',  'She will be so happy when she finally hears the good news.',   'Shi uíl bi sô hâpi uén shi fáinêli híers dê gud niuz.',     'Ela vai ser / Ela vai estar'],
+  ['It',        'will be', "It'll be",   'Ítl bi',   'It will be extremely cold and rainy all weekend long.',        'It uíl bi ikstrímli kóuld ênd réini ól uíkend lóng.',       'Vai ser / Vai estar'],
+  ['We',        'will be', "We'll be",   'Uíl bi',   'We will all be ready to start the new project next Monday.',  'Uí uíl ól bi rédi tu stárt dê niú pródjekt néxt mândei.',  'Nós vamos ser / Nós vamos estar'],
+  ['You (pl.)', 'will be', "You'll be",  'Iúl bi',   'You will all be most welcome at our grand opening ceremony.', 'Iú uíl ól bi môust uélkam êt áuer grând ópening sérimoni.', 'Vocês vão ser / Vocês vão estar'],
+  ['They',      'will be', "They'll be", 'Déil bi',  'They will be here at exactly eight o\'clock in the morning.', 'Déi uíl bi hír êt igzâktli éit ôklók in dê mórning.',      'Eles(as) vão ser / Eles(as) vão estar'],
 ];
 
 const NEGATIVA = [
-  ['Negativa (pres.)',         'Sujeito + am/is/are + not', 'âm nót / iz nót / ar nót',  "I am not tired. / She is not here.",       "Ai âm nót táierd. / Shi iz nót hír.",        "Não estou / Ela não está"],
-  ['Negativa (passado)',       'Sujeito + was/were + not',  'wóz nót / wér nót',          "He was not ready. / They were not late.",  "Hi waz nót rédi. / Déi wer nót léit.",       "Ele não estava / Eles não estavam"],
-  ['Negativa (futuro)',        "Sujeito + won't be",        'uónt bi',                    "I won't be home. / They won't be late.",   "Ai uónt bi hôum. / Déi uónt bi léit.",       "Não vou estar / Eles não vão estar"],
-  ['Interrogativa (pres.)',    'Am/Is/Are + sujeito + ?',   'Âm / Íz / Ar',              "Are you ready? / Is she home?",            "Ar iú rédi? / Iz shi hôum?",                 "Você está pronto? / Ela está em casa?"],
-  ['Interrogativa (passado)',  'Was/Were + sujeito + ?',    'Wóz / Wér',                 "Was he at school? / Were they happy?",     "Wóz hi ât skúl? / Wer déi hâpi?",            "Ele estava na escola? / Eles estavam felizes?"],
-  ['Interrogativa (futuro)',   'Will + sujeito + be + ?',   'Uíl',                       "Will you be there? / Will it be cold?",    "Uíl iú bi dér? / Uíl it bi kóuld?",          "Você vai estar lá? / Vai estar frio?"],
-  ["Neg. contraída (pres.)",   "isn't / aren't",            "Íz-nt / Ar-nt",             "He isn't tall. / They aren't here.",       "Hi íznt tól. / Déi árnt hír.",               "Ele não é / Eles não estão"],
-  ["Neg. contraída (passado)", "wasn't / weren't",          "Wóz-nt / Wér-nt",           "She wasn't busy. / We weren't late.",      "Shi wóznt bízi. / Uí wérnt léit.",           "Ela não estava / Não estávamos"],
-  ["Neg. contraída (futuro)",  "won't be",                  "Uónt bi",                   "I won't be ready. / She won't be home.",   "Ai uónt bi rédi. / Shi uónt bi hôum.",       "Não vou estar pronto / Ela não vai estar"],
+  ['Negativa (pres.)',         'Sujeito + am/is/are + not', 'âm nót / iz nót / ar nót',  "I am not tired at all. / She is not here right now.",                        "Ai âm nót táierd êt ól. / Shi iz nót hír ráit náu.",                  "Não estou / Ela não está"],
+  ['Negativa (passado)',       'Sujeito + was/were + not',  'wóz nót / wér nót',          "He was not ready when the boss arrived. / They were not late for once.",     "Hi waz nót rédi uén dê bós êráivd. / Déi wer nót léit for uáns.",     "Ele não estava / Eles não estavam"],
+  ['Negativa (futuro)',        "Sujeito + won't be",        'uónt bi',                    "I won't be at home tomorrow evening. / They won't be late this time.",       "Ai uónt bi êt hôum tumórou ívning. / Déi uónt bi léit dis táim.",     "Não vou estar / Eles não vão estar"],
+  ['Interrogativa (pres.)',    'Am/Is/Are + sujeito + ?',   'Âm / Íz / Ar',              "Are you ready to start the exam right now? / Is she still at home?",        "Ar iú rédi tu stárt dê igzâm ráit náu? / Iz shi stíl êt hôum?",      "Você está pronto? / Ela está em casa?"],
+  ['Interrogativa (passado)',  'Was/Were + sujeito + ?',    'Wóz / Wér',                 "Was he at school when you tried to call him? / Were they happy with it?",   "Wóz hi êt skúl uén iú tráid tu kól him? / Wer déi hâpi uid it?",     "Ele estava na escola? / Eles estavam felizes?"],
+  ['Interrogativa (futuro)',   'Will + sujeito + be + ?',   'Uíl',                       "Will you be at the party tonight? / Will it be cold enough to snow?",       "Uíl iú bi êt dê párti tunáit? / Uíl it bi kóuld ináf tu snô?",       "Você vai estar lá? / Vai estar frio?"],
+  ["Neg. contraída (pres.)",   "isn't / aren't",            "Íz-nt / Ar-nt",             "He isn't as tall as his older brother. / They aren't here yet, please wait.", "Hi íznt êz tól êz hiz ôulder bráder. / Déi árnt hír iét, plíz uéit.", "Ele não é / Eles não estão"],
+  ["Neg. contraída (passado)", "wasn't / weren't",          "Wóz-nt / Wér-nt",           "She wasn't too busy to help us out. / We weren't late for the big meeting.", "Shi wóznt tú bízi tu hélp us áut. / Uí wérnt léit for dê big míting.", "Ela não estava / Não estávamos"],
+  ["Neg. contraída (futuro)",  "won't be",                  "Uónt bi",                   "I won't be ready on time today. / She won't be home until midnight.",        "Ai uónt bi rédi ón táim tudêi. / Shi uónt bi hôum untíl midnáit.",    "Não vou estar pronto / Ela não vai estar"],
 ];
 
 function TbHeader({ color, children }) {
