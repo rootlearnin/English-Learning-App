@@ -12,48 +12,48 @@ const difficultyColor = {
 };
 
 const PRESENTE = [
-  ['I',         'am',  "I'm",     'Ai-m',  'I am a student.',      'Eu sou / Eu estou'],
-  ['You',       'are', "You're",  'Iur',   'You are smart.',        'Você é / Você está'],
-  ['He',        'is',  "He's",    'Riz',   'He is tall.',           'Ele é / Ele está'],
-  ['She',       'is',  "She's",   'Shiz',  'She is happy.',         'Ela é / Ela está'],
-  ['It',        'is',  "It's",    'Its',   'It is cold.',           'É / Está (coisas, lugares ou animais)'],
-  ['We',        'are', "We're",   'Uí-ar', 'We are friends.',       'Nós somos / Nós estamos'],
-  ['You (pl.)', 'are', "You're",  'Iur',   'You are welcome.',      'Vocês são / Vocês estão'],
-  ['They',      'are', "They're", 'Dér',   'They are teachers.',    'Eles(as) são / Eles(as) estão'],
+  ['I',         'am',  "I'm",     'Ai-m',  'I am a student.',      'Ai âm ê stúdent.',       'Eu sou / Eu estou'],
+  ['You',       'are', "You're",  'Iur',   'You are smart.',        'Iú ar smart.',            'Você é / Você está'],
+  ['He',        'is',  "He's",    'Riz',   'He is tall.',           'Hi iz tól.',              'Ele é / Ele está'],
+  ['She',       'is',  "She's",   'Shiz',  'She is happy.',         'Shi iz hâpi.',            'Ela é / Ela está'],
+  ['It',        'is',  "It's",    'Its',   'It is cold.',           'It iz kóuld.',            'É / Está (coisas, lugares ou animais)'],
+  ['We',        'are', "We're",   'Uí-ar', 'We are friends.',       'Uí ar frends.',           'Nós somos / Nós estamos'],
+  ['You (pl.)', 'are', "You're",  'Iur',   'You are welcome.',      'Iú ar uélkam.',           'Vocês são / Vocês estão'],
+  ['They',      'are', "They're", 'Dér',   'They are teachers.',    'Déi ar títchers.',        'Eles(as) são / Eles(as) estão'],
 ];
 
 const PASSADO = [
-  ['I',         'was',  'I was tired yesterday.',    'Eu estava cansado ontem.'],
-  ['You',       'were', 'You were right.',            'Você estava certo.'],
-  ['He',        'was',  'He was at home.',            'Ele estava em casa.'],
-  ['She',       'was',  'She was happy.',             'Ela estava feliz.'],
-  ['It',        'was',  'It was cold.',               'Estava frio.'],
-  ['We',        'were', 'We were students.',          'Nós éramos estudantes.'],
-  ['You (pl.)', 'were', 'You were late.',             'Vocês estavam atrasados.'],
-  ['They',      'were', 'They were busy.',            'Eles estavam ocupados.'],
+  ['I',         'was',  'Waz',  'I was tired yesterday.',    'Ai waz táierd iésterdêi.',     'Eu era / Eu estava'],
+  ['You',       'were', 'Wer',  'You were right.',            'Iú wer ráit.',                 'Você era / Você estava'],
+  ['He',        'was',  'Waz',  'He was at home.',            'Hi waz ât hôum.',              'Ele era / Ele estava'],
+  ['She',       'was',  'Waz',  'She was happy.',             'Shi waz hâpi.',                'Ela era / Ela estava'],
+  ['It',        'was',  'Waz',  'It was cold.',               'It waz kóuld.',                'Era / Estava (coisas, lugares ou animais)'],
+  ['We',        'were', 'Wer',  'We were students.',          'Uí wer stúdents.',             'Nós éramos / Nós estávamos'],
+  ['You (pl.)', 'were', 'Wer',  'You were late.',             'Iú wer léit.',                 'Vocês eram / Vocês estavam'],
+  ['They',      'were', 'Wer',  'They were busy.',            'Déi wer bízi.',                'Eles(as) eram / Eles(as) estavam'],
 ];
 
 const FUTURO = [
-  ['I',         'will be', "I'll be",    'I will be there soon.',     'Eu vou estar lá em breve.'],
-  ['You',       'will be', "You'll be",  'You will be fine.',          'Você vai ficar bem.'],
-  ['He',        'will be', "He'll be",   'He will be late.',           'Ele vai se atrasar.'],
-  ['She',       'will be', "She'll be",  'She will be happy.',         'Ela vai ficar feliz.'],
-  ['It',        'will be', "It'll be",   'It will be cold tomorrow.',  'Vai estar frio amanhã.'],
-  ['We',        'will be', "We'll be",   'We will be ready.',          'Nós vamos estar prontos.'],
-  ['You (pl.)', 'will be', "You'll be",  'You will be welcome.',       'Vocês serão bem-vindos.'],
-  ['They',      'will be', "They'll be", 'They will be here at 8.',    'Eles vão estar aqui às 8.'],
+  ['I',         'will be', "I'll be",    'Ai-l bi',  'I will be there soon.',     'Ai uíl bi dér sun.',          'Eu vou ser / Eu vou estar'],
+  ['You',       'will be', "You'll be",  'Iúl bi',   'You will be fine.',          'Iú uíl bi fáin.',             'Você vai ser / Você vai estar'],
+  ['He',        'will be', "He'll be",   'Híl bi',   'He will be late.',           'Hi uíl bi léit.',             'Ele vai ser / Ele vai estar'],
+  ['She',       'will be', "She'll be",  'Shíl bi',  'She will be happy.',         'Shi uíl bi hâpi.',            'Ela vai ser / Ela vai estar'],
+  ['It',        'will be', "It'll be",   'Ítl bi',   'It will be cold tomorrow.',  'It uíl bi kóuld tumórou.',    'Vai ser / Vai estar'],
+  ['We',        'will be', "We'll be",   'Uíl bi',   'We will be ready.',          'Uí uíl bi rédi.',             'Nós vamos ser / Nós vamos estar'],
+  ['You (pl.)', 'will be', "You'll be",  'Iúl bi',   'You will be welcome.',       'Iú uíl bi uélkam.',           'Vocês vão ser / Vocês vão estar'],
+  ['They',      'will be', "They'll be", 'Déil bi',  'They will be here at 8.',    'Déi uíl bi hír êt éit.',      'Eles(as) vão ser / Eles(as) vão estar'],
 ];
 
 const NEGATIVA = [
-  ['Negativa (pres.)',         'Sujeito + am/is/are + not', "I am not tired. / She is not here.",          "Não estou cansado. / Ela não está aqui."],
-  ['Negativa (passado)',       'Sujeito + was/were + not',  "He was not ready. / They were not late.",     "Ele não estava pronto. / Eles não estavam atrasados."],
-  ['Negativa (futuro)',        "Sujeito + won't be",        "I won't be home. / They won't be late.",      "Não vou estar em casa. / Eles não vão se atrasar."],
-  ['Interrogativa (pres.)',    'Am/Is/Are + sujeito + ?',   "Are you ready? / Is she home?",               "Você está pronto? / Ela está em casa?"],
-  ['Interrogativa (passado)',  'Was/Were + sujeito + ?',    "Was he at school? / Were they happy?",        "Ele estava na escola? / Eles estavam felizes?"],
-  ['Interrogativa (futuro)',   'Will + sujeito + be + ?',   "Will you be there? / Will it be cold?",       "Você vai estar lá? / Vai estar frio?"],
-  ["Neg. contraída (pres.)",   "isn't / aren't",            "He isn't tall. / They aren't here.",          "Ele não é alto. / Eles não estão aqui."],
-  ["Neg. contraída (passado)", "wasn't / weren't",          "She wasn't busy. / We weren't late.",         "Ela não estava ocupada. / Não estávamos atrasados."],
-  ["Neg. contraída (futuro)",  "won't be",                  "I won't be ready. / She won't be home.",      "Não vou estar pronto. / Ela não vai estar em casa."],
+  ['Negativa (pres.)',         'Sujeito + am/is/are + not', 'âm nót / iz nót / ar nót',  "I am not tired. / She is not here.",       "Ai âm nót táierd. / Shi iz nót hír.",        "Não estou / Ela não está"],
+  ['Negativa (passado)',       'Sujeito + was/were + not',  'wóz nót / wér nót',          "He was not ready. / They were not late.",  "Hi waz nót rédi. / Déi wer nót léit.",       "Ele não estava / Eles não estavam"],
+  ['Negativa (futuro)',        "Sujeito + won't be",        'uónt bi',                    "I won't be home. / They won't be late.",   "Ai uónt bi hôum. / Déi uónt bi léit.",       "Não vou estar / Eles não vão estar"],
+  ['Interrogativa (pres.)',    'Am/Is/Are + sujeito + ?',   'Âm / Íz / Ar',              "Are you ready? / Is she home?",            "Ar iú rédi? / Iz shi hôum?",                 "Você está pronto? / Ela está em casa?"],
+  ['Interrogativa (passado)',  'Was/Were + sujeito + ?',    'Wóz / Wér',                 "Was he at school? / Were they happy?",     "Wóz hi ât skúl? / Wer déi hâpi?",            "Ele estava na escola? / Eles estavam felizes?"],
+  ['Interrogativa (futuro)',   'Will + sujeito + be + ?',   'Uíl',                       "Will you be there? / Will it be cold?",    "Uíl iú bi dér? / Uíl it bi kóuld?",          "Você vai estar lá? / Vai estar frio?"],
+  ["Neg. contraída (pres.)",   "isn't / aren't",            "Íz-nt / Ar-nt",             "He isn't tall. / They aren't here.",       "Hi íznt tól. / Déi árnt hír.",               "Ele não é / Eles não estão"],
+  ["Neg. contraída (passado)", "wasn't / weren't",          "Wóz-nt / Wér-nt",           "She wasn't busy. / We weren't late.",      "Shi wóznt bízi. / Uí wérnt léit.",           "Ela não estava / Não estávamos"],
+  ["Neg. contraída (futuro)",  "won't be",                  "Uónt bi",                   "I won't be ready. / She won't be home.",   "Ai uónt bi rédi. / Shi uónt bi hôum.",       "Não vou estar pronto / Ela não vai estar"],
 ];
 
 function TbHeader({ color, children }) {
@@ -213,13 +213,16 @@ export default function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {PRESENTE.map(([pronoun, verb, contraction, pron, example, translation], i) => (
+                  {PRESENTE.map(([pronoun, verb, contraction, pron, example, exPron, translation], i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-indigo-50/20'}>
                       <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
                       <TbCell className="text-indigo-600 font-bold">{verb}</TbCell>
                       <TbCell className="text-purple-600 font-mono font-semibold">{contraction}</TbCell>
                       <TbCell className="text-orange-500 font-mono text-xs">({pron})</TbCell>
-                      <TbCell className="italic text-gray-700">{example}</TbCell>
+                      <TbCell>
+                        <span className="italic text-gray-700 block">{example}</span>
+                        <span className="text-orange-400 font-mono text-xs block mt-0.5">({exPron})</span>
+                      </TbCell>
                       <TbCell className="text-gray-600 font-medium">{translation}</TbCell>
                     </tr>
                   ))}
@@ -233,18 +236,22 @@ export default function Dashboard() {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-amber-50">
-                    {['Pronome','To Be','Exemplo','Tradução'].map(h => (
+                    {['Pronome','To Be','Pronúncia','Exemplo','Tradução'].map(h => (
                       <TbHeader key={h} color="border-amber-100 text-amber-700">{h}</TbHeader>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {PASSADO.map(([pronoun, verb, example, translation], i) => (
+                  {PASSADO.map(([pronoun, verb, pron, example, exPron, translation], i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'}>
                       <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
                       <TbCell className="text-amber-600 font-bold">{verb}</TbCell>
-                      <TbCell className="italic text-gray-700">{example}</TbCell>
-                      <TbCell className="text-gray-500">{translation}</TbCell>
+                      <TbCell className="text-orange-500 font-mono text-xs">({pron})</TbCell>
+                      <TbCell>
+                        <span className="italic text-gray-700 block">{example}</span>
+                        <span className="text-orange-400 font-mono text-xs block mt-0.5">({exPron})</span>
+                      </TbCell>
+                      <TbCell className="text-gray-600 font-medium">{translation}</TbCell>
                     </tr>
                   ))}
                 </tbody>
@@ -257,19 +264,23 @@ export default function Dashboard() {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-green-50">
-                    {['Pronome','To Be','Contração','Exemplo','Tradução'].map(h => (
+                    {['Pronome','To Be','Contração','Pronúncia','Exemplo','Tradução'].map(h => (
                       <TbHeader key={h} color="border-green-100 text-green-700">{h}</TbHeader>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {FUTURO.map(([pronoun, verb, contraction, example, translation], i) => (
+                  {FUTURO.map(([pronoun, verb, contraction, pron, example, exPron, translation], i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-green-50/20'}>
                       <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
                       <TbCell className="text-green-600 font-bold">{verb}</TbCell>
-                      <TbCell className="text-teal-600 font-mono">{contraction}</TbCell>
-                      <TbCell className="italic text-gray-700">{example}</TbCell>
-                      <TbCell className="text-gray-500">{translation}</TbCell>
+                      <TbCell className="text-teal-600 font-mono font-semibold">{contraction}</TbCell>
+                      <TbCell className="text-orange-500 font-mono text-xs">({pron})</TbCell>
+                      <TbCell>
+                        <span className="italic text-gray-700 block">{example}</span>
+                        <span className="text-orange-400 font-mono text-xs block mt-0.5">({exPron})</span>
+                      </TbCell>
+                      <TbCell className="text-gray-600 font-medium">{translation}</TbCell>
                     </tr>
                   ))}
                 </tbody>
@@ -282,18 +293,22 @@ export default function Dashboard() {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-red-50">
-                    {['Forma','Estrutura','Exemplo','Tradução'].map(h => (
+                    {['Forma','Estrutura','Pronúncia','Exemplo','Tradução'].map(h => (
                       <TbHeader key={h} color="border-red-100 text-red-700">{h}</TbHeader>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {NEGATIVA.map(([form, structure, example, translation], i) => (
+                  {NEGATIVA.map(([form, structure, pron, example, exPron, translation], i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-red-50/20'}>
                       <TbCell className="font-semibold text-gray-800 whitespace-nowrap">{form}</TbCell>
-                      <TbCell className="text-red-600 font-mono text-xs whitespace-nowrap">{structure}</TbCell>
-                      <TbCell className="italic text-gray-700">{example}</TbCell>
-                      <TbCell className="text-gray-500">{translation}</TbCell>
+                      <TbCell className="text-red-600 font-mono text-xs">{structure}</TbCell>
+                      <TbCell className="text-orange-500 font-mono text-xs">{pron}</TbCell>
+                      <TbCell>
+                        <span className="italic text-gray-700 block">{example}</span>
+                        <span className="text-orange-400 font-mono text-xs block mt-0.5">({exPron})</span>
+                      </TbCell>
+                      <TbCell className="text-gray-600 font-medium">{translation}</TbCell>
                     </tr>
                   ))}
                 </tbody>
