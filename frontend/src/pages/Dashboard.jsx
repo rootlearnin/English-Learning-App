@@ -12,14 +12,14 @@ const difficultyColor = {
 };
 
 const PRESENTE = [
-  ['I',         'am',  "I'm",    'I am a student.',      'Eu sou um estudante.'],
-  ['You',       'are', "You're", 'You are smart.',        'Você é inteligente.'],
-  ['He',        'is',  "He's",   'He is tall.',           'Ele é alto.'],
-  ['She',       'is',  "She's",  'She is happy.',         'Ela está feliz.'],
-  ['It',        'is',  "It's",   'It is cold.',           'Está frio.'],
-  ['We',        'are', "We're",  'We are friends.',       'Nós somos amigos.'],
-  ['You (pl.)', 'are', "You're", 'You are welcome.',      'Vocês são bem-vindos.'],
-  ['They',      'are', "They're",'They are teachers.',    'Eles são professores.'],
+  ['I',         'am',  "I'm",     'Ai-m',  'I am a student.',      'Eu sou / Eu estou'],
+  ['You',       'are', "You're",  'Iur',   'You are smart.',        'Você é / Você está'],
+  ['He',        'is',  "He's",    'Riz',   'He is tall.',           'Ele é / Ele está'],
+  ['She',       'is',  "She's",   'Shiz',  'She is happy.',         'Ela é / Ela está'],
+  ['It',        'is',  "It's",    'Its',   'It is cold.',           'É / Está (coisas, lugares ou animais)'],
+  ['We',        'are', "We're",   'Uí-ar', 'We are friends.',       'Nós somos / Nós estamos'],
+  ['You (pl.)', 'are', "You're",  'Iur',   'You are welcome.',      'Vocês são / Vocês estão'],
+  ['They',      'are', "They're", 'Dér',   'They are teachers.',    'Eles(as) são / Eles(as) estão'],
 ];
 
 const PASSADO = [
@@ -33,13 +33,27 @@ const PASSADO = [
   ['They',      'were', 'They were busy.',            'Eles estavam ocupados.'],
 ];
 
+const FUTURO = [
+  ['I',         'will be', "I'll be",    'I will be there soon.',     'Eu vou estar lá em breve.'],
+  ['You',       'will be', "You'll be",  'You will be fine.',          'Você vai ficar bem.'],
+  ['He',        'will be', "He'll be",   'He will be late.',           'Ele vai se atrasar.'],
+  ['She',       'will be', "She'll be",  'She will be happy.',         'Ela vai ficar feliz.'],
+  ['It',        'will be', "It'll be",   'It will be cold tomorrow.',  'Vai estar frio amanhã.'],
+  ['We',        'will be', "We'll be",   'We will be ready.',          'Nós vamos estar prontos.'],
+  ['You (pl.)', 'will be', "You'll be",  'You will be welcome.',       'Vocês serão bem-vindos.'],
+  ['They',      'will be', "They'll be", 'They will be here at 8.',    'Eles vão estar aqui às 8.'],
+];
+
 const NEGATIVA = [
   ['Negativa (pres.)',         'Sujeito + am/is/are + not', "I am not tired. / She is not here.",          "Não estou cansado. / Ela não está aqui."],
   ['Negativa (passado)',       'Sujeito + was/were + not',  "He was not ready. / They were not late.",     "Ele não estava pronto. / Eles não estavam atrasados."],
+  ['Negativa (futuro)',        "Sujeito + won't be",        "I won't be home. / They won't be late.",      "Não vou estar em casa. / Eles não vão se atrasar."],
   ['Interrogativa (pres.)',    'Am/Is/Are + sujeito + ?',   "Are you ready? / Is she home?",               "Você está pronto? / Ela está em casa?"],
   ['Interrogativa (passado)',  'Was/Were + sujeito + ?',    "Was he at school? / Were they happy?",        "Ele estava na escola? / Eles estavam felizes?"],
+  ['Interrogativa (futuro)',   'Will + sujeito + be + ?',   "Will you be there? / Will it be cold?",       "Você vai estar lá? / Vai estar frio?"],
   ["Neg. contraída (pres.)",   "isn't / aren't",            "He isn't tall. / They aren't here.",          "Ele não é alto. / Eles não estão aqui."],
   ["Neg. contraída (passado)", "wasn't / weren't",          "She wasn't busy. / We weren't late.",         "Ela não estava ocupada. / Não estávamos atrasados."],
+  ["Neg. contraída (futuro)",  "won't be",                  "I won't be ready. / She won't be home.",      "Não vou estar pronto. / Ela não vai estar em casa."],
 ];
 
 function TbHeader({ color, children }) {
@@ -185,7 +199,7 @@ export default function Dashboard() {
             <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
               📌 Verbo TO BE — Referência Rápida
             </h2>
-            <p className="text-sm text-gray-500 mb-6">Conjugação completa no presente, passado e negativa com tradução</p>
+            <p className="text-sm text-gray-500 mb-6">Conjugação completa com pronúncia e tradução (ser / estar)</p>
 
             {/* Presente */}
             <h3 className="text-xs font-bold text-indigo-700 uppercase tracking-widest mb-2">Presente (Present)</h3>
@@ -193,19 +207,20 @@ export default function Dashboard() {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-indigo-50">
-                    {['Pronome','To Be','Contração','Exemplo','Tradução'].map(h => (
+                    {['Pronome','To Be','Contração','Pronúncia','Exemplo','Tradução'].map(h => (
                       <TbHeader key={h} color="border-indigo-100 text-indigo-700">{h}</TbHeader>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {PRESENTE.map(([pronoun, verb, contraction, example, translation], i) => (
+                  {PRESENTE.map(([pronoun, verb, contraction, pron, example, translation], i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-indigo-50/20'}>
                       <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
                       <TbCell className="text-indigo-600 font-bold">{verb}</TbCell>
-                      <TbCell className="text-purple-600 font-mono">{contraction}</TbCell>
+                      <TbCell className="text-purple-600 font-mono font-semibold">{contraction}</TbCell>
+                      <TbCell className="text-orange-500 font-mono text-xs">({pron})</TbCell>
                       <TbCell className="italic text-gray-700">{example}</TbCell>
-                      <TbCell className="text-gray-500">{translation}</TbCell>
+                      <TbCell className="text-gray-600 font-medium">{translation}</TbCell>
                     </tr>
                   ))}
                 </tbody>
@@ -228,6 +243,31 @@ export default function Dashboard() {
                     <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-amber-50/20'}>
                       <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
                       <TbCell className="text-amber-600 font-bold">{verb}</TbCell>
+                      <TbCell className="italic text-gray-700">{example}</TbCell>
+                      <TbCell className="text-gray-500">{translation}</TbCell>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Futuro */}
+            <h3 className="text-xs font-bold text-green-700 uppercase tracking-widest mb-2">Futuro (Future — Will Be)</h3>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-green-50">
+                    {['Pronome','To Be','Contração','Exemplo','Tradução'].map(h => (
+                      <TbHeader key={h} color="border-green-100 text-green-700">{h}</TbHeader>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {FUTURO.map(([pronoun, verb, contraction, example, translation], i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-green-50/20'}>
+                      <TbCell className="font-semibold text-gray-800">{pronoun}</TbCell>
+                      <TbCell className="text-green-600 font-bold">{verb}</TbCell>
+                      <TbCell className="text-teal-600 font-mono">{contraction}</TbCell>
                       <TbCell className="italic text-gray-700">{example}</TbCell>
                       <TbCell className="text-gray-500">{translation}</TbCell>
                     </tr>

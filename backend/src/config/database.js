@@ -313,43 +313,299 @@ Adicione **-ed** ao verbo:
       { q: '___ he study for the test?',                 opts: '["Do","Does","Did","Was"]',                                       c: 2, e: 'Perguntas no passado usam "Did" para todos os sujeitos.' },
       { q: 'They ___ (not/work) last week.',             opts: '["didn\'t worked","didn\'t work","not worked","don\'t work"]',    c: 1, e: 'Negativa: didn\'t + verbo base (sem -ed).' },
     ]
+  },
+
+  // ── Lição 6 ──────────────────────────────────────────────────────────────────
+  {
+    order_num: 6,
+    title: 'Simple Present',
+    description: 'Como falar sobre hábitos e fatos no presente',
+    difficulty: 'beginner',
+    content: `## Simple Present (Presente Simples)
+
+Usado para **hábitos**, **fatos** e **rotinas**.
+
+### Formação
+
+| Sujeito | Verbo | Exemplo |
+|---------|-------|---------|
+| I / You / We / They | verbo base | I **work** every day. |
+| He / She / It | verbo + **s** ou **es** | She **works** every day. |
+
+### Regras para He/She/It
+
+| Regra | Exemplo |
+|-------|---------|
+| Maioria dos verbos: add **-s** | work → works, play → plays |
+| Terminam em -s, -sh, -ch, -x, -o: add **-es** | watch → watches, go → goes |
+| Terminam em consoante + y: troca **y** por **-ies** | study → studies |
+
+### Forma Negativa
+
+| Sujeito | Negativa |
+|---------|----------|
+| I / You / We / They | **don't** + verbo base |
+| He / She / It | **doesn't** + verbo base |
+
+- I **don't** like coffee. (Eu não gosto de café)
+- She **doesn't** work on Sundays. (Ela não trabalha aos domingos)
+
+### Forma Interrogativa
+
+- **Do** you like music? (Você gosta de música?)
+- **Does** he live here? (Ele mora aqui?)`,
+    exercises: [
+      { q: 'She ___ (work) every day.',                  opts: '["work","works","working","worked"]',                             c: 1, e: 'Com He/She/It adiciona-se -s: works.' },
+      { q: 'They ___ (study) English at school.',        opts: '["studies","studys","study","studyed"]',                          c: 2, e: 'Com I/You/We/They usa-se o verbo base: study.' },
+      { q: 'He ___ (watch) TV every night.',             opts: '["watch","watchs","watched","watches"]',                          c: 3, e: 'Verbo termina em -ch: adiciona -es → watches.' },
+      { q: 'I ___ (not/like) coffee.',                   opts: '["doesn\'t like","don\'t like","not like","don\'t likes"]',       c: 1, e: 'Com I/You/We/They a negativa é "don\'t + verbo base".' },
+      { q: 'She ___ (not/eat) meat.',                    opts: '["don\'t eat","doesn\'t eat","not eats","doesn\'t eats"]',        c: 1, e: 'Com She/He/It a negativa é "doesn\'t + verbo base".' },
+      { q: '___ you live near here?',                    opts: '["Does","Do","Is","Are"]',                                        c: 1, e: 'Com You/I/We/They a pergunta usa "Do".' },
+      { q: '___ she speak Spanish?',                     opts: '["Do","Is","Does","Has"]',                                        c: 2, e: 'Com She/He/It a pergunta usa "Does".' },
+      { q: 'What is the Simple Present of "study" for "he"?', opts: '["studys","study","studied","studies"]',                     c: 3, e: 'Consoante + y → troca y por -ies: studies.' },
+      { q: 'My dog ___ (go) for a walk every morning.',  opts: '["go","gos","goes","going"]',                                     c: 2, e: 'Verbo termina em -o: adiciona -es → goes.' },
+      { q: 'Como se diz "Eu não trabalho aos sábados"?', opts: '["I doesn\'t work on Saturdays.","I not work on Saturdays.","I don\'t work on Saturdays.","I don\'t works on Saturdays."]', c: 2, e: 'I + don\'t + verbo base.' },
+    ]
+  },
+
+  // ── Lição 7 ──────────────────────────────────────────────────────────────────
+  {
+    order_num: 7,
+    title: 'Artigos: A, An e The',
+    description: 'Quando usar a, an e the corretamente',
+    difficulty: 'beginner',
+    content: `## Artigos em Inglês: A, An e The
+
+### Artigo Indefinido: A ou An
+
+Usado com substantivos **não específicos** (mencionados pela primeira vez).
+
+| Artigo | Quando usar | Exemplos |
+|--------|-------------|---------|
+| **a** | antes de som de **consoante** | a book, a car, a university |
+| **an** | antes de som de **vogal** | an apple, an hour, an umbrella |
+
+> ⚠️ A regra é pelo **som**, não pela letra!
+> - "a university" (som de "you" = consoante)
+> - "an hour" (som de "aur" = vogal — o h é mudo)
+
+### Artigo Definido: The
+
+Usado quando o substantivo é **específico** ou já conhecido.
+
+- I saw **a** dog. **The** dog was big. (primeiro: a → depois: the)
+- **The** sun rises in the east. (único no mundo)
+- **The** Amazon River is in Brazil. (nome geográfico específico)
+
+### Sem artigo (Zero Article)
+
+- Nomes próprios: *Brazil, Maria, London*
+- Plurais genéricos: *I like **dogs**.* (cachorros em geral)
+- Refeições: *I have **breakfast** at 7am.*
+- Esportes: *She plays **tennis**.*`,
+    exercises: [
+      { q: 'I have ___ apple for lunch.',                opts: '["a","an","the","—"]',                                            c: 1, e: '"apple" começa com som de vogal → "an".' },
+      { q: 'She is ___ engineer.',                       opts: '["a","an","the","—"]',                                            c: 1, e: '"engineer" começa com som de vogal → "an".' },
+      { q: 'I bought ___ new car yesterday.',            opts: '["a","an","the","—"]',                                            c: 0, e: '"car" começa com som de consoante → "a".' },
+      { q: 'Please close ___ door.',                     opts: '["a","an","the","—"]',                                            c: 2, e: 'A porta específica que está aberta → "the".' },
+      { q: '___ sun is very hot today.',                 opts: '["A","An","The","—"]',                                            c: 2, e: 'O sol é único → "The".' },
+      { q: 'She plays ___ tennis every weekend.',        opts: '["a","an","the","—"]',                                            c: 3, e: 'Esportes não usam artigo.' },
+      { q: 'I saw ___ old man in the park.',             opts: '["a","an","the","—"]',                                            c: 1, e: '"old" começa com som de vogal → "an old man".' },
+      { q: 'He is ___ university student.',              opts: '["a","an","the","—"]',                                            c: 0, e: '"university" tem som de "you" (consoante) → "a".' },
+      { q: 'I have ___ breakfast at 7am.',               opts: '["a","an","the","—"]',                                            c: 3, e: 'Nomes de refeições não usam artigo.' },
+      { q: 'She is ___ best student in the class.',      opts: '["a","an","the","—"]',                                            c: 2, e: 'Superlativo sempre usa "the".' },
+    ]
+  },
+
+  // ── Lição 8 ──────────────────────────────────────────────────────────────────
+  {
+    order_num: 8,
+    title: 'Modal Verbs: Can e Could',
+    description: 'Expressar habilidade, permissão e pedidos',
+    difficulty: 'intermediate',
+    content: `## Modal Verbs: Can e Could
+
+Modais **não mudam** com o sujeito (sem -s para he/she/it) e são seguidos pelo **verbo base**.
+
+### CAN — Presente
+
+| Uso | Exemplo | Tradução |
+|-----|---------|----------|
+| Habilidade | I **can** swim. | Eu sei nadar. |
+| Permissão informal | **Can** I use your phone? | Posso usar seu telefone? |
+| Possibilidade | It **can** be very cold here. | Pode ser muito frio aqui. |
+
+### COULD — Passado / Formal
+
+| Uso | Exemplo | Tradução |
+|-----|---------|----------|
+| Habilidade no passado | I **could** run fast when I was young. | Eu conseguia correr rápido quando era jovem. |
+| Pedido formal/educado | **Could** you help me, please? | Você poderia me ajudar? |
+| Possibilidade | It **could** rain tomorrow. | Pode chover amanhã. |
+
+### Forma Negativa
+
+- I **can't** (cannot) drive. (Eu não sei dirigir)
+- She **couldn't** come yesterday. (Ela não conseguiu vir ontem)
+
+### Estrutura
+
+**Sujeito + can/could + verbo base (sem to)**
+
+✅ She **can speak** French.
+❌ She **can speaks** French.
+❌ She **can to speak** French.`,
+    exercises: [
+      { q: 'She ___ speak three languages.',             opts: '["can","cans","could to","to can"]',                              c: 0, e: 'Modal "can" não muda com o sujeito: can.' },
+      { q: 'When I was young, I ___ run very fast.',     opts: '["can","could","couldn\'t","cans"]',                              c: 1, e: '"Could" expressa habilidade no passado.' },
+      { q: '___ I open the window, please?',             opts: '["Could","Coulds","Can to","Am I"]',                              c: 0, e: '"Could" para pedidos educados/formais.' },
+      { q: 'He ___ swim when he was five.',              opts: '["can\'t","couldn\'t","could","can"]',                            c: 2, e: 'Habilidade no passado → "could".' },
+      { q: 'I ___ (not) find my keys anywhere.',         opts: '["can\'t","coulds not","could to not","cannot to"]',              c: 0, e: 'Incapacidade no presente → "can\'t" (cannot).' },
+      { q: 'Which sentence is correct?',                 opts: '["She can speaks English.","She can to speak English.","She can speak English.","She cans speak English."]', c: 2, e: 'Modal + verbo base (sem -s e sem "to").' },
+      { q: '___ you help me with this exercise?',        opts: '["Can","Could","Both are correct","Cans"]',                       c: 2, e: '"Can" (informal) e "could" (mais formal/educado) são ambos corretos aqui.' },
+      { q: 'It ___ be dangerous at night.',              opts: '["can","could","Both are correct","cans"]',                       c: 2, e: '"Can" e "could" expressam possibilidade — ambos corretos.' },
+      { q: 'Como se diz "Eu não consigo dormir"?',       opts: '["I couldn\'t sleep.","I can\'t sleep.","I cannot to sleep.","I not can sleep."]', c: 1, e: 'Incapacidade no presente → "can\'t sleep".' },
+      { q: 'When she was a child, she ___ play the piano.', opts: '["can","cans","could","could to"]',                            c: 2, e: 'Habilidade no passado → "could".' },
+    ]
+  },
+
+  // ── Lição 9 ──────────────────────────────────────────────────────────────────
+  {
+    order_num: 9,
+    title: 'Future: Will e Going To',
+    description: 'Como falar sobre o futuro em inglês',
+    difficulty: 'intermediate',
+    content: `## Future: Will e Going To
+
+### WILL — Decisão espontânea / Previsão
+
+| Uso | Exemplo | Tradução |
+|-----|---------|----------|
+| Decisão no momento | I **will** help you. | Eu vou te ajudar (decidi agora). |
+| Promessa | I **will** call you later. | Eu vou te ligar depois. |
+| Previsão sem evidência | I think it **will** rain. | Acho que vai chover. |
+
+**Estrutura:** Sujeito + **will** + verbo base
+**Negativa:** Sujeito + **won't** (will not) + verbo base
+
+### GOING TO — Plano / Intenção / Evidência
+
+| Uso | Exemplo | Tradução |
+|-----|---------|----------|
+| Plano já decidido | I **am going to** study tonight. | Vou estudar esta noite (já planejei). |
+| Intenção | She **is going to** start a new job. | Ela vai começar um novo emprego. |
+| Evidência visível | Look at those clouds! It **is going to** rain! | Olha as nuvens! Vai chover! |
+
+**Estrutura:** Sujeito + **am/is/are going to** + verbo base
+
+### Comparação
+
+| Situação | Use |
+|----------|-----|
+| "O telefone está tocando. Eu ___." | **will** answer it. (decisão agora) |
+| "Comprei os ingressos. Eu ___ ao show." | **am going to** go to the show. (plano) |`,
+    exercises: [
+      { q: '"The phone is ringing." — "I ___ answer it."', opts: '["am going to","will","going to","am will"]',                  c: 1, e: 'Decisão tomada no momento → "will".' },
+      { q: 'I bought tickets. I ___ go to the concert.', opts: '["will","am going to","goes to","am will"]',                     c: 1, e: 'Plano já feito anteriormente → "am going to".' },
+      { q: 'She ___ (not/come) to the party tomorrow.', opts: '["won\'t come","going not to come","will not comes","not will come"]', c: 0, e: 'Negativa de will → won\'t + verbo base.' },
+      { q: 'Look at those clouds! It ___ rain!',         opts: '["will","is going to","goes to","am going to"]',                  c: 1, e: 'Evidência visível de algo prestes a acontecer → going to.' },
+      { q: '___ you help me with this later?',           opts: '["Are going to","Will","Going to","Is"]',                         c: 1, e: 'Pergunta com "will" para pedir ajuda.' },
+      { q: 'I think Brazil ___ win the World Cup.',      opts: '["is going to","will","are going to","goes to"]',                 c: 1, e: 'Previsão pessoal sem evidência concreta → will.' },
+      { q: 'They ___ get married next year. (plano)',    opts: '["will","are going to","is going to","going"]',                   c: 1, e: 'Plano definido anteriormente → are going to.' },
+      { q: 'Como se diz "Ela não vai vir" (decisão agora)?', opts: '["She won\'t come.","She isn\'t going to come.","She goes not come.","She will not comes."]', c: 0, e: 'Negativa de will → won\'t.' },
+      { q: 'I ___ study tonight. I already made a plan.', opts: '["will","am going to","goes to","am will to"]',                  c: 1, e: 'Plano já decidido → am going to.' },
+      { q: 'What does "won\'t" mean?',                   opts: '["will not","would not","was not","want not"]',                   c: 0, e: '"Won\'t" é a contração de "will not".' },
+    ]
+  },
+
+  // ── Lição 10 ─────────────────────────────────────────────────────────────────
+  {
+    order_num: 10,
+    title: 'Números, Datas e Horas',
+    description: 'Conte, diga datas e horas em inglês',
+    difficulty: 'beginner',
+    content: `## Números, Datas e Horas
+
+### Números Cardinais
+
+| 1–10 | 11–20 | Dezenas |
+|------|-------|---------|
+| one, two, three | eleven, twelve, thirteen | twenty, thirty, forty |
+| four, five, six | fourteen, fifteen, sixteen | fifty, sixty, seventy |
+| seven, eight, nine, ten | seventeen, eighteen, nineteen, twenty | eighty, ninety, one hundred |
+
+> Números compostos: **twenty-one** (21), **forty-five** (45), **ninety-nine** (99)
+
+### Números Ordinais (para datas)
+
+| Número | Ordinal | Abreviação |
+|--------|---------|------------|
+| 1 | first | 1st |
+| 2 | second | 2nd |
+| 3 | third | 3rd |
+| 4–20 | fourth, fifth... | 4th, 5th... |
+| 21 | twenty-first | 21st |
+
+### Datas
+
+- **May 5th** ou **the 5th of May** = 5 de maio
+- **July 4th, 1776** = 4 de julho de 1776
+
+### Meses do Ano
+
+January, February, March, April, May, June, July, August, September, October, November, December
+
+### Horas
+
+| Expressão | Significado |
+|-----------|-------------|
+| It's 3 o'clock | São 3 horas |
+| It's half past 3 | São 3 e meia |
+| It's quarter past 3 | São 3 e quinze |
+| It's quarter to 4 | São 15 para as 4 |`,
+    exercises: [
+      { q: 'How do you say "25" in English?',            opts: '["two five","twenty-five","twentyfive","two tens and five"]',     c: 1, e: 'Dezenas compostas usam hífen: twenty-five.' },
+      { q: 'What is the ordinal of "3"?',                opts: '["threeth","therd","third","thrird"]',                            c: 2, e: '"Third" é o ordinal de 3 (irregular).' },
+      { q: 'How do you say "1st" out loud?',             opts: '["oneth","first","onest","frist"]',                               c: 1, e: '"1st" = first (ordinal irregular).' },
+      { q: '"It\'s half past 3" means:',                 opts: '["3:15","3:45","3:30","3:00"]',                                   c: 2, e: '"Half past" = e meia → 3:30.' },
+      { q: 'What month is after July?',                  opts: '["June","September","August","October"]',                         c: 2, e: 'A ordem é: ...June, July, **August**, September...' },
+      { q: 'How do you say the date "May 5th"?',         opts: '["May fifty","the fifth of May","May five","fifth May"]',         c: 1, e: '"The fifth of May" ou "May fifth" são as formas corretas.' },
+      { q: '"It\'s quarter to 4" means:',                opts: '["4:15","3:45","4:45","3:15"]',                                   c: 1, e: '"Quarter to 4" = 15 minutos antes das 4 = 3:45.' },
+      { q: 'How do you say "100" in English?',           opts: '["one hundred","ten tens","a hundreds","hundredth"]',             c: 0, e: '"100" = one hundred.' },
+      { q: 'What is the ordinal of "2"?',                opts: '["twoth","secund","second","twoest"]',                            c: 2, e: '"Second" é o ordinal de 2 (irregular).' },
+      { q: '"It\'s quarter past 3" means:',              opts: '["3:45","3:30","3:00","3:15"]',                                   c: 3, e: '"Quarter past" = e quinze → 3:15.' },
+    ]
   }
 ];
 
-// ─── Seed inicial (banco vazio) ───────────────────────────────────────────────
+// ─── Seed / migração unificada ────────────────────────────────────────────────
+// Roda sempre: insere lições novas e completa exercícios faltantes.
 
-const seedCount = db.prepare('SELECT COUNT(*) as count FROM lessons').get();
+const insertLesson   = db.prepare('INSERT INTO lessons (title, description, content, difficulty, order_num) VALUES (?, ?, ?, ?, ?)');
+const insertExercise = db.prepare('INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)');
 
-if (seedCount.count === 0) {
-  const insertLesson   = db.prepare('INSERT INTO lessons (title, description, content, difficulty, order_num) VALUES (?, ?, ?, ?, ?)');
-  const insertExercise = db.prepare('INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)');
+for (const lessonData of LESSONS_DATA) {
+  let lesson = db.prepare('SELECT id FROM lessons WHERE order_num = ?').get(lessonData.order_num);
 
-  for (const lesson of LESSONS_DATA) {
-    const { lastInsertRowid } = insertLesson.run(lesson.title, lesson.description, lesson.content, lesson.difficulty, lesson.order_num);
-    for (const ex of lesson.exercises) {
-      insertExercise.run(lastInsertRowid, ex.q, ex.opts, ex.c, ex.e);
-    }
-  }
-}
-
-// ─── Migração: adicionar exercícios extras em lições existentes ───────────────
-
-else {
-  const insertExercise = db.prepare('INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)');
-
-  for (const lessonData of LESSONS_DATA) {
-    const lesson = db.prepare('SELECT id FROM lessons WHERE order_num = ?').get(lessonData.order_num);
-    if (!lesson) continue;
-
-    const existing = db.prepare('SELECT COUNT(*) as count FROM exercises WHERE lesson_id = ?').get(lesson.id);
-    const needed = lessonData.exercises.length - existing.count;
-    if (needed <= 0) continue;
-
-    const toAdd = lessonData.exercises.slice(existing.count);
-    for (const ex of toAdd) {
+  if (!lesson) {
+    const { lastInsertRowid } = insertLesson.run(
+      lessonData.title, lessonData.description, lessonData.content,
+      lessonData.difficulty, lessonData.order_num
+    );
+    lesson = { id: lastInsertRowid };
+    for (const ex of lessonData.exercises) {
       insertExercise.run(lesson.id, ex.q, ex.opts, ex.c, ex.e);
     }
-    console.log(`✚ ${needed} exercício(s) adicionado(s) à lição "${lessonData.title}"`);
+    console.log(`✚ Lição "${lessonData.title}" adicionada (${lessonData.exercises.length} exercícios)`);
+  } else {
+    const existing = db.prepare('SELECT COUNT(*) as count FROM exercises WHERE lesson_id = ?').get(lesson.id);
+    const needed = lessonData.exercises.length - existing.count;
+    if (needed > 0) {
+      for (const ex of lessonData.exercises.slice(existing.count)) {
+        insertExercise.run(lesson.id, ex.q, ex.opts, ex.c, ex.e);
+      }
+      console.log(`✚ ${needed} exercício(s) adicionado(s) à lição "${lessonData.title}"`);
+    }
   }
 }
 
