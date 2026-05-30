@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+dist/
+.DS_Store
+screenshots/
+test-app.mjs
+test-lesson-fix.mjs
+package.json
+package-lock.json
