@@ -64,20 +64,15 @@ db.exec(`
   );
 `);
 
-const seedLessons = db.prepare('SELECT COUNT(*) as count FROM lessons').get();
-if (seedLessons.count === 0) {
-  const insertLesson = db.prepare(
-    'INSERT INTO lessons (title, description, content, difficulty, order_num) VALUES (?, ?, ?, ?, ?)'
-  );
-  const insertExercise = db.prepare(
-    'INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)'
-  );
+// ─── Dados completos de cada lição ────────────────────────────────────────────
 
-  const lessons = [
-    {
-      title: 'Verbo TO BE',
-      description: 'Aprenda o verbo mais importante do inglês',
-      content: `## Verbo TO BE
+const LESSONS_DATA = [
+  {
+    order_num: 1,
+    title: 'Verbo TO BE',
+    description: 'Aprenda o verbo mais importante do inglês',
+    difficulty: 'beginner',
+    content: `## Verbo TO BE
 
 O verbo **to be** significa "ser" ou "estar". É o verbo mais usado em inglês.
 
@@ -111,20 +106,25 @@ Adicione **not** depois do to be:
 Inverta o sujeito e o to be:
 - **Are** you ready? (Você está pronto?)
 - **Is** she at home? (Ela está em casa?)`,
-      difficulty: 'beginner',
-      order_num: 1,
-      exercises: [
-        { question: 'I ___ a student.', options: ['["am","is","are","be"]'], correct: 0, explanation: 'Com "I" usamos sempre "am".' },
-        { question: 'She ___ happy.', options: ['["am","is","are","be"]'], correct: 1, explanation: 'Com "She/He/It" usamos "is".' },
-        { question: 'They ___ teachers.', options: ['["am","is","are","be"]'], correct: 2, explanation: 'Com "They/We/You" usamos "are".' },
-        { question: 'He ___ tall.', options: ['["am","is","are","be"]'], correct: 1, explanation: 'Com "He" usamos "is".' },
-        { question: 'We ___ friends.', options: ['["am","is","are","be"]'], correct: 2, explanation: 'Com "We" usamos "are".' },
-      ]
-    },
-    {
-      title: 'Verbos Irregulares',
-      description: 'Os verbos mais usados no dia a dia',
-      content: `## Verbos Irregulares
+    exercises: [
+      { q: 'I ___ a student.',                                   opts: '["am","is","are","be"]',                              c: 0, e: 'Com "I" usamos sempre "am".' },
+      { q: 'She ___ happy.',                                     opts: '["am","is","are","be"]',                              c: 1, e: 'Com "She/He/It" usamos "is".' },
+      { q: 'They ___ teachers.',                                 opts: '["am","is","are","be"]',                              c: 2, e: 'Com "They/We/You" usamos "are".' },
+      { q: 'He ___ tall.',                                       opts: '["am","is","are","be"]',                              c: 1, e: 'Com "He" usamos "is".' },
+      { q: 'We ___ friends.',                                    opts: '["am","is","are","be"]',                              c: 2, e: 'Com "We" usamos "are".' },
+      { q: 'It ___ cold today.',                                 opts: '["am","is","are","be"]',                              c: 1, e: 'Com "It" usamos "is".' },
+      { q: 'You ___ my best friend.',                            opts: '["am","is","are","be"]',                              c: 2, e: 'Com "You" usamos "are".' },
+      { q: 'Como se diz "Ela não está aqui" em inglês?',         opts: '["She not is here.","She is not here.","She are not here.","She am not here."]', c: 1, e: 'Negativa: sujeito + is + not.' },
+      { q: '___ she a doctor?',                                  opts: '["Am","Is","Are","Be"]',                              c: 1, e: 'Com "she" a pergunta começa com "Is".' },
+      { q: 'The cats ___ hungry.',                               opts: '["am","is","are","be"]',                              c: 2, e: '"The cats" é plural, equivale a "They" → "are".' },
+    ]
+  },
+  {
+    order_num: 2,
+    title: 'Verbos Irregulares',
+    description: 'Os verbos mais usados no dia a dia',
+    difficulty: 'beginner',
+    content: `## Verbos Irregulares
 
 Verbos irregulares não seguem o padrão regular de conjugação. Memorize os mais comuns!
 
@@ -150,20 +150,25 @@ Verbos irregulares não seguem o padrão regular de conjugação. Memorize os ma
 - We **saw** a great movie. (Nós vimos um ótimo filme)
 - He **made** dinner. (Ele fez o jantar)
 - They **knew** the answer. (Eles sabiam a resposta)`,
-      difficulty: 'beginner',
-      order_num: 2,
-      exercises: [
-        { question: 'Yesterday, I ___ to school. (go)', options: ['["go","went","gone","goes"]'], correct: 1, explanation: '"Went" é o passado de "go".' },
-        { question: 'She ___ hello to me. (say)', options: ['["say","sayed","said","says"]'], correct: 2, explanation: '"Said" é o passado de "say".' },
-        { question: 'We ___ a movie. (see)', options: ['["see","sawn","saw","seen"]'], correct: 2, explanation: '"Saw" é o passado de "see".' },
-        { question: 'He ___ dinner. (make)', options: ['["maked","made","makes","make"]'], correct: 1, explanation: '"Made" é o passado de "make".' },
-        { question: 'They ___ the answer. (know)', options: ['["know","knowed","knew","known"]'], correct: 2, explanation: '"Knew" é o passado de "know".' },
-      ]
-    },
-    {
-      title: 'Present Continuous',
-      description: 'Expressando ações que acontecem agora',
-      content: `## Present Continuous (Presente Contínuo)
+    exercises: [
+      { q: 'Yesterday, I ___ to school. (go)',           opts: '["go","went","gone","goes"]',             c: 1, e: '"Went" é o passado de "go".' },
+      { q: 'She ___ hello to me. (say)',                 opts: '["say","sayed","said","says"]',           c: 2, e: '"Said" é o passado de "say".' },
+      { q: 'We ___ a movie. (see)',                      opts: '["see","sawn","saw","seen"]',             c: 2, e: '"Saw" é o passado de "see".' },
+      { q: 'He ___ dinner. (make)',                      opts: '["maked","made","makes","make"]',         c: 1, e: '"Made" é o passado de "make".' },
+      { q: 'They ___ the answer. (know)',                opts: '["know","knowed","knew","known"]',        c: 2, e: '"Knew" é o passado de "know".' },
+      { q: 'I ___ a great idea. (have)',                 opts: '["have","haved","had","has"]',            c: 2, e: '"Had" é o passado de "have".' },
+      { q: 'She ___ to school early. (come)',            opts: '["come","comed","came","comes"]',         c: 2, e: '"Came" é o passado de "come".' },
+      { q: 'He ___ very tired after work. (get)',        opts: '["get","getted","gots","got"]',           c: 3, e: '"Got" é o passado de "get".' },
+      { q: 'They ___ about the problem. (think)',        opts: '["think","thinked","thought","thunk"]',   c: 2, e: '"Thought" é o passado de "think".' },
+      { q: 'We ___ our homework last night. (do)',       opts: '["do","does","done","did"]',              c: 3, e: '"Did" é o passado de "do".' },
+    ]
+  },
+  {
+    order_num: 3,
+    title: 'Present Continuous',
+    description: 'Expressando ações que acontecem agora',
+    difficulty: 'intermediate',
+    content: `## Present Continuous (Presente Contínuo)
 
 Usado para ações que estão acontecendo **agora** ou em progresso.
 
@@ -190,20 +195,25 @@ Usado para ações que estão acontecendo **agora** ou em progresso.
 ✅ Ação acontecendo agora: *"I am eating."*
 ✅ Ação temporária: *"She is living in Paris this month."*
 ✅ Planos futuros: *"We are meeting tomorrow."*`,
-      difficulty: 'intermediate',
-      order_num: 3,
-      exercises: [
-        { question: 'She ___ (study) English right now.', options: ['["study","studies","is studying","are studying"]'], correct: 2, explanation: 'She + is + verb-ing = "is studying".' },
-        { question: 'They ___ (play) soccer now.', options: ['["play","plays","is playing","are playing"]'], correct: 3, explanation: 'They + are + verb-ing = "are playing".' },
-        { question: 'What is the -ing form of "make"?', options: ['["makeing","making","makking","maked"]'], correct: 1, explanation: 'Remove o -e antes de adicionar -ing: make → making.' },
-        { question: 'What is the -ing form of "run"?', options: ['["runing","running","runeing","runs"]'], correct: 1, explanation: 'Verbo curto com consoante dupla: run → running.' },
-        { question: 'I ___ (not/sleep) right now.', options: ['["am not sleeping","is not sleeping","are not sleeping","not sleeping"]'], correct: 0, explanation: 'I + am not + verb-ing = "am not sleeping".' },
-      ]
-    },
-    {
-      title: 'Vocabulário: Rotina Diária',
-      description: 'Palavras essenciais para falar sobre o seu dia',
-      content: `## Rotina Diária em Inglês
+    exercises: [
+      { q: 'She ___ (study) English right now.',         opts: '["study","studies","is studying","are studying"]',   c: 2, e: 'She + is + verb-ing = "is studying".' },
+      { q: 'They ___ (play) soccer now.',                opts: '["play","plays","is playing","are playing"]',        c: 3, e: 'They + are + verb-ing = "are playing".' },
+      { q: 'What is the -ing form of "make"?',           opts: '["makeing","making","makking","maked"]',             c: 1, e: 'Remove o -e antes de adicionar -ing: make → making.' },
+      { q: 'What is the -ing form of "run"?',            opts: '["runing","running","runeing","runs"]',              c: 1, e: 'Verbo curto termina em consoante: dobra antes de -ing.' },
+      { q: 'I ___ (not/sleep) right now.',               opts: '["am not sleeping","is not sleeping","are not sleeping","not sleeping"]', c: 0, e: 'I + am not + verb-ing = "am not sleeping".' },
+      { q: 'He ___ (write) a letter at the moment.',     opts: '["write","is writing","are writing","writes"]',      c: 1, e: 'He + is + verb-ing = "is writing".' },
+      { q: 'We ___ (have) dinner right now.',            opts: '["have","is having","are having","haves"]',          c: 2, e: 'We + are + verb-ing = "are having". Remove o -e de "have".' },
+      { q: 'What is the -ing form of "swim"?',           opts: '["swiming","swimeing","swimming","swims"]',          c: 2, e: 'Verbo curto (cvc): dobra o "m" → swimming.' },
+      { q: 'The dog ___ (not/eat) its food.',            opts: '["is not eating","are not eating","not eating","does not eating"]', c: 0, e: '"The dog" = it → is not eating.' },
+      { q: '___ they ___ (travel) to Paris?',            opts: '["Is / travelling","Are / travelling","Do / travelling","Am / travelling"]', c: 1, e: 'They → Are + verb-ing.' },
+    ]
+  },
+  {
+    order_num: 4,
+    title: 'Vocabulário: Rotina Diária',
+    description: 'Palavras essenciais para falar sobre o seu dia',
+    difficulty: 'beginner',
+    content: `## Rotina Diária em Inglês
 
 ### Atividades Matinais
 
@@ -232,20 +242,25 @@ Usado para ações que estão acontecendo **agora** ou em progresso.
 ### Exemplo de Rotina
 
 *"I **wake up** at 7am. I **take a shower** and **have breakfast**. Then I **go to school**. After school, I **do homework** and **have dinner** with my family. I **go to bed** at 10pm."*`,
-      difficulty: 'beginner',
-      order_num: 4,
-      exercises: [
-        { question: 'What does "wake up" mean?', options: ['["dormir","acordar","levantar","descansar"]'], correct: 1, explanation: '"Wake up" significa acordar.' },
-        { question: 'How do you say "tomar café da manhã"?', options: ['["have lunch","have dinner","have breakfast","have tea"]'], correct: 2, explanation: '"Have breakfast" = tomar café da manhã.' },
-        { question: 'What does "go to bed" mean?', options: ['["sair da cama","ir trabalhar","ir dormir","fazer a cama"]'], correct: 2, explanation: '"Go to bed" significa ir dormir.' },
-        { question: '"Do homework" means:', options: ['["fazer a cama","fazer lição de casa","fazer o almoço","fazer exercícios"]'], correct: 1, explanation: '"Do homework" = fazer lição de casa.' },
-        { question: 'How do you say "voltar para casa"?', options: ['["go home","come back home","stay home","leave home"]'], correct: 1, explanation: '"Come back home" = voltar para casa.' },
-      ]
-    },
-    {
-      title: 'Simple Past',
-      description: 'Fale sobre eventos que já aconteceram',
-      content: `## Simple Past (Passado Simples)
+    exercises: [
+      { q: 'What does "wake up" mean?',                  opts: '["dormir","acordar","levantar","descansar"]',                         c: 1, e: '"Wake up" significa acordar.' },
+      { q: 'How do you say "tomar café da manhã"?',      opts: '["have lunch","have dinner","have breakfast","have tea"]',            c: 2, e: '"Have breakfast" = tomar café da manhã.' },
+      { q: 'What does "go to bed" mean?',                opts: '["sair da cama","ir trabalhar","ir dormir","fazer a cama"]',          c: 2, e: '"Go to bed" significa ir dormir.' },
+      { q: '"Do homework" means:',                       opts: '["fazer a cama","fazer lição de casa","fazer o almoço","fazer exercícios"]', c: 1, e: '"Do homework" = fazer lição de casa.' },
+      { q: 'How do you say "voltar para casa"?',         opts: '["go home","come back home","stay home","leave home"]',              c: 1, e: '"Come back home" = voltar para casa.' },
+      { q: 'What does "take a shower" mean?',            opts: '["escovar os dentes","tomar banho","se vestir","lavar o rosto"]',    c: 1, e: '"Take a shower" = tomar banho.' },
+      { q: 'How do you say "escovar os dentes"?',        opts: '["get dressed","wash your face","brush your teeth","comb your hair"]', c: 2, e: '"Brush your teeth" = escovar os dentes.' },
+      { q: 'What does "get dressed" mean?',              opts: '["tomar banho","acordar","se vestir","sair de casa"]',               c: 2, e: '"Get dressed" = se vestir.' },
+      { q: 'How do you say "assistir TV"?',              opts: '["read a book","watch TV","listen to music","play games"]',          c: 1, e: '"Watch TV" = assistir TV.' },
+      { q: 'What does "have lunch" mean?',               opts: '["tomar café","almoçar","jantar","fazer um lanche"]',                c: 1, e: '"Have lunch" = almoçar.' },
+    ]
+  },
+  {
+    order_num: 5,
+    title: 'Simple Past',
+    description: 'Fale sobre eventos que já aconteceram',
+    difficulty: 'intermediate',
+    content: `## Simple Past (Passado Simples)
 
 Usado para ações **completadas** no passado.
 
@@ -286,35 +301,55 @@ Adicione **-ed** ao verbo:
 - Last night, I **watched** a movie. (Ontem à noite eu assisti um filme)
 - She **studied** hard for the test. (Ela estudou muito para a prova)
 - He **didn't go** to the party. (Ele não foi à festa)`,
-      difficulty: 'intermediate',
-      order_num: 5,
-      exercises: [
-        { question: 'Yesterday, she ___ (work) all day.', options: ['["work","works","worked","working"]'], correct: 2, explanation: 'Passado regular de "work" é "worked".' },
-        { question: 'How do you say "Eu não fui" in English?', options: ['["I not went","I didn\'t go","I didn\'t went","I not go"]'], correct: 1, explanation: 'Negativa no passado: didn\'t + verbo base.' },
-        { question: '___ you watch TV last night?', options: ['["Do","Does","Did","Was"]'], correct: 2, explanation: 'Perguntas no passado usam "Did".' },
-        { question: 'What is the past of "study"?', options: ['["studyed","studied","studid","studieded"]'], correct: 1, explanation: 'study → studied (troca o y por ied).' },
-        { question: 'He ___ stop the car quickly.', options: ['["stoped","stoppped","stopped","stopted"]'], correct: 2, explanation: 'Verbo curto termina em consoante: dobra a consoante + ed.' },
-      ]
-    }
-  ];
+    exercises: [
+      { q: 'Yesterday, she ___ (work) all day.',         opts: '["work","works","worked","working"]',                              c: 2, e: 'Passado regular de "work" é "worked".' },
+      { q: 'Como se diz "Eu não fui" em inglês?',        opts: '["I not went","I didn\'t go","I didn\'t went","I not go"]',       c: 1, e: 'Negativa no passado: didn\'t + verbo base.' },
+      { q: '___ you watch TV last night?',               opts: '["Do","Does","Did","Was"]',                                        c: 2, e: 'Perguntas no passado usam "Did".' },
+      { q: 'What is the past of "study"?',               opts: '["studyed","studied","studid","studieded"]',                      c: 1, e: 'study → studied (y vira ied).' },
+      { q: 'What is the past of "stop"?',                opts: '["stoped","stoppped","stopped","stopted"]',                       c: 2, e: 'Verbo curto + consoante: dobra antes de -ed.' },
+      { q: 'She ___ (play) tennis yesterday.',           opts: '["play","plaied","played","plays"]',                              c: 2, e: 'Verbo regular: play + ed = played.' },
+      { q: 'Como se diz "Ela assistiu um filme"?',       opts: '["She watch a movie.","She watched a movie.","She did watched a movie.","She watching a movie."]', c: 1, e: 'Passado de "watch" é "watched".' },
+      { q: 'What is the past of "live"?',                opts: '["liveed","lived","livd","liven"]',                               c: 1, e: 'Verbo termina em -e: acrescenta só -d → lived.' },
+      { q: '___ he study for the test?',                 opts: '["Do","Does","Did","Was"]',                                       c: 2, e: 'Perguntas no passado usam "Did" para todos os sujeitos.' },
+      { q: 'They ___ (not/work) last week.',             opts: '["didn\'t worked","didn\'t work","not worked","don\'t work"]',    c: 1, e: 'Negativa: didn\'t + verbo base (sem -ed).' },
+    ]
+  }
+];
 
-  for (const lesson of lessons) {
-    const result = insertLesson.run(
-      lesson.title,
-      lesson.description,
-      lesson.content,
-      lesson.difficulty,
-      lesson.order_num
-    );
+// ─── Seed inicial (banco vazio) ───────────────────────────────────────────────
+
+const seedCount = db.prepare('SELECT COUNT(*) as count FROM lessons').get();
+
+if (seedCount.count === 0) {
+  const insertLesson   = db.prepare('INSERT INTO lessons (title, description, content, difficulty, order_num) VALUES (?, ?, ?, ?, ?)');
+  const insertExercise = db.prepare('INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)');
+
+  for (const lesson of LESSONS_DATA) {
+    const { lastInsertRowid } = insertLesson.run(lesson.title, lesson.description, lesson.content, lesson.difficulty, lesson.order_num);
     for (const ex of lesson.exercises) {
-      insertExercise.run(
-        result.lastInsertRowid,
-        ex.question,
-        ex.options[0],
-        ex.correct,
-        ex.explanation
-      );
+      insertExercise.run(lastInsertRowid, ex.q, ex.opts, ex.c, ex.e);
     }
+  }
+}
+
+// ─── Migração: adicionar exercícios extras em lições existentes ───────────────
+
+else {
+  const insertExercise = db.prepare('INSERT INTO exercises (lesson_id, question, options, correct_answer, explanation) VALUES (?, ?, ?, ?, ?)');
+
+  for (const lessonData of LESSONS_DATA) {
+    const lesson = db.prepare('SELECT id FROM lessons WHERE order_num = ?').get(lessonData.order_num);
+    if (!lesson) continue;
+
+    const existing = db.prepare('SELECT COUNT(*) as count FROM exercises WHERE lesson_id = ?').get(lesson.id);
+    const needed = lessonData.exercises.length - existing.count;
+    if (needed <= 0) continue;
+
+    const toAdd = lessonData.exercises.slice(existing.count);
+    for (const ex of toAdd) {
+      insertExercise.run(lesson.id, ex.q, ex.opts, ex.c, ex.e);
+    }
+    console.log(`✚ ${needed} exercício(s) adicionado(s) à lição "${lessonData.title}"`);
   }
 }
 
